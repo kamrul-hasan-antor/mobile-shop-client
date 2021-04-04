@@ -15,6 +15,7 @@ const Checkout = () => {
   }, [_id]);
   console.log(detail);
   const { name, price, quantity } = detail;
+
   return (
     <div className="checkoutMain m-5 bg-light">
       <h2>Checkout</h2>
@@ -35,6 +36,9 @@ const Checkout = () => {
           <td>${price} </td>
         </tr>
       </table>
+      <div className="float-right checkoutBtn">
+        <button className="btn btn-primary">Checkout</button>
+      </div>
     </div>
   );
 };

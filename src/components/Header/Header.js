@@ -22,11 +22,14 @@ const Header = () => {
                 <Link className="mr-auto  nav-link" to="/checkout">
                   Check Out
                 </Link>
-                <Link className="mr-auto  nav-link" to="/">
+                <Link className="mr-auto  nav-link" to="/orders">
                   Orders
                 </Link>
-                <Link className="mr-auto  nav-link" to="/addProduct">
-                  Add Product
+                <Link className="mr-auto  nav-link" to="/deals">
+                  Deals
+                </Link>
+                <Link className="mr-auto  nav-link" to="/admin">
+                  Admin
                 </Link>
                 <Link className="mr-auto nav-link" to="/login">
                   Login

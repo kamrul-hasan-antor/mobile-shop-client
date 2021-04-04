@@ -4,6 +4,8 @@ import AddProducts from "./components/AddProducts/AddProducts";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Checkout from "./components/Checkout/Checkout";
+import Login from "./components/Login/Login";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
         </Route>
         <Route path="/addProduct">
           <AddProducts />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </Switch>
     </Router>

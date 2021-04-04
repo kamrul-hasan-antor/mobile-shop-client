@@ -24,5 +24,7 @@ th {
 .checkoutProduct {
   border-bottom: 1px solid rgb(172, 166, 166);
   text-align: center;
-  /* font-size: 21px; */
+}
+.checkoutBtn {
+  margin-right: 20%;
 }
