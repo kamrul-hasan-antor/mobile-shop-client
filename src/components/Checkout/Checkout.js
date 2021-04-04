@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
+import "./Checkout.css";
 
 const Checkout = () => {
   const { _id } = useParams();
@@ -15,32 +16,25 @@ const Checkout = () => {
   console.log(detail);
   const { name, price, quantity } = detail;
   return (
-    <div className="container">
+    <div className="checkoutMain m-5 bg-light">
+      <h2>Checkout</h2>
       <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>{name}</td>
-            <td>{quantity}</td>
-            <td>${price}</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td colSpan="3">Total</td>
-            <td>${price}</td>
-          </tr>
-        </tbody>
+        <tr>
+          <th>Mobile Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td className="checkoutProduct">{name}</td>
+          <td className="checkoutProduct">{quantity}</td>
+          <td className="checkoutProduct">${price}</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td>${price} </td>
+        </tr>
       </table>
-      <button variant="primary"> Checkout</button>
     </div>
   );
 };
