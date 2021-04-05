@@ -6,14 +6,17 @@ import AddProducts from "../AddProducts/AddProducts";
 const Admin = () => {
   return (
     <div>
-      <Navbar className="navigation bg-light m-2 " expand="lg">
+      <Navbar
+        className="navigation bg-secondary m-2 ml-auto mr-auto"
+        expand="lg"
+      >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className=" ml-lg-auto mr-lg-auto ml-sm-1 mb-2 mb-lg-0">
-            <Link className="mr-auto nav-link" to="/addProducts">
+            <Link className="mr-auto text-white nav-link" to="/addProducts">
               Add Products
             </Link>
-            <Link className="mr-auto nav-link" to="/editProduct">
+            <Link className="mr-auto text-white nav-link" to="/editProduct">
               Edit Products
             </Link>
           </Nav>

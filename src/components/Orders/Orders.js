@@ -6,17 +6,17 @@ const Orders = () => {
   const [loggedinUser, setLoggedinUser] = useContext(UserContext);
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/orders")
-      .then((res) => res.json())
-      .then((data) => filterOrders(data));
-  }, []);
   const filterOrders = (data) => {
     const filterData = data.filter(
       (order) => order.email == loggedinUser.email
     );
     setOrders(filterData);
   };
+  useEffect(() => {
+    fetch("http://localhost:5000/orders")
+      .then((res) => res.json())
+      .then((data) => filterOrders(data));
+  }, []);
   const history = useHistory();
   const handleConfirmOrders = () => {
     const url = "/deals";

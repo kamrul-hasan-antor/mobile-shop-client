@@ -36,18 +36,18 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin />
-          </Route>
-          <Route path="/editProduct">
+          </PrivateRoute>
+          <PrivateRoute path="/editProduct">
             <EditProduct />
-          </Route>
-          <Route path="/deals">
+          </PrivateRoute>
+          <PrivateRoute path="/deals">
             <Deals />
-          </Route>
-          <Route path="/orders">
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
             <Orders />
-          </Route>
+          </PrivateRoute>
           <Route path="/allProduct">
             <AllProduct />
           </Route>

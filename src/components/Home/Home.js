@@ -1,7 +1,9 @@
+import { CircularProgress } from "@material-ui/core";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import AllProduct from "../AllProduct/AllProduct";
+import EditProduct from "../EditProduct/EditProduct";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -14,6 +16,7 @@ const Home = () => {
 
   return (
     <div>
+      {products.length === 0 && <CircularProgress color="primary" />}
       {products.map((product) => (
         <AllProduct product={product}></AllProduct>
       ))}
