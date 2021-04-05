@@ -1,10 +1,13 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 
 const Deals = () => {
   return (
-    <div>
-      <h1>Deals</h1>
-    </div>
+    <Row>
+      <Col className="text-center mt-5">
+        <h2 className="text-success">Thanks for purchasing....</h2>
+      </Col>
+    </Row>
   );
 };
 

@@ -7,32 +7,53 @@ import Checkout from "./components/Checkout/Checkout";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import EditProduct from "./components/EditProduct/EditProduct";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Deals from "./components/Deals/Deals";
+import { useState, createContext } from "react";
+import Orders from "./components/Orders/Orders";
+import AllProduct from "./components/AllProduct/AllProduct";
+export const UserContext = createContext();
 
 function App() {
+  const [loggedinUser, setLoggedinUser] = useState({});
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/checkout/:_id">
-          <Checkout />
-        </Route>
-        <Route path="/addProducts">
-          <AddProducts />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/admin">
-          <Admin />
-        </Route>
-        <Route path="/editProduct">
-          <EditProduct />
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={[loggedinUser, setLoggedinUser]}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute path="/checkout/:_id">
+            <Checkout />
+          </PrivateRoute>
+          <Route path="/addProducts">
+            <AddProducts />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/editProduct">
+            <EditProduct />
+          </Route>
+          <Route path="/deals">
+            <Deals />
+          </Route>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+          <Route path="/allProduct">
+            <AllProduct />
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

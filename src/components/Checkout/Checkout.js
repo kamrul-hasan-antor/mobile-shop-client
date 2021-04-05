@@ -1,12 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useParams } from "react-router";
+import { useState, useContext, useEffect } from "react";
+import { useHistory, useParams } from "react-router";
+import { UserContext } from "../../App";
 import "./Checkout.css";
 
 const Checkout = () => {
   const { _id } = useParams();
   const [detail, setDetail] = useState([]);
+  const [loggedinUser, setLoggedinUser] = useContext(UserContext);
+
   useEffect(() => {
     const url = `http://localhost:5000/checkout/${_id}`;
     fetch(url)
@@ -15,6 +17,28 @@ const Checkout = () => {
   }, [_id]);
   console.log(detail);
   const { name, price, quantity } = detail;
+
+  const history = useHistory();
+  const handleCheckOut = () => {
+    const link = "/orders";
+    history.push(link);
+    const orderInfo = {
+      name,
+      price,
+      quantity,
+      ...loggedinUser,
+      orderTime: new Date(),
+    };
+    const url = `http://localhost:5000/addOrders`;
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderInfo),
+    }).then((res) => console.log("server side response", res));
+  };
 
   return (
     <div className="checkoutMain m-5 bg-light">
@@ -37,7 +61,9 @@ const Checkout = () => {
         </tr>
       </table>
       <div className="float-right checkoutBtn">
-        <button className="btn btn-primary">Checkout</button>
+        <button onClick={handleCheckOut} className="btn btn-primary">
+          Checkout
+        </button>
       </div>
     </div>
   );
