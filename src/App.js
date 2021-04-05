@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Checkout from "./components/Checkout/Checkout";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
+import EditProduct from "./components/EditProduct/EditProduct";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/checkout/:_id">
           <Checkout />
         </Route>
-        <Route path="/addProduct">
+        <Route path="/addProducts">
           <AddProducts />
         </Route>
         <Route path="/login">
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/admin">
           <Admin />
+        </Route>
+        <Route path="/editProduct">
+          <EditProduct />
         </Route>
       </Switch>
     </Router>

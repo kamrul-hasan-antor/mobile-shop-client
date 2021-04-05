@@ -1,31 +1,25 @@
-import { Link } from "@material-ui/core";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AddProducts from "../AddProducts/AddProducts";
-import EditProduct from "../EditProduct/EditProduct";
 
 const Admin = () => {
   return (
-    <div className="bg-light">
-      <Row>
-        <Col md={2} className="bg-dark">
-          <Link to="#addProduct" className="text-white">
-            Add Product Here
-          </Link>
-          <br />
-          <Link to="/editproduct" className="text-white">
-            Edit Product Here
-          </Link>
-          <br />
-          <Link to="#manageproduct" className="text-white">
-            Manage Product Here
-          </Link>
-        </Col>
-        <Col md={10}>
-          <AddProducts></AddProducts>
-          <EditProduct></EditProduct>
-        </Col>
-      </Row>
+    <div>
+      <Navbar className="navigation bg-light m-2 " expand="lg">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className=" ml-lg-auto mr-lg-auto ml-sm-1 mb-2 mb-lg-0">
+            <Link className="mr-auto nav-link" to="/addProducts">
+              Add Products
+            </Link>
+            <Link className="mr-auto nav-link" to="/editProduct">
+              Edit Products
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <AddProducts></AddProducts>
     </div>
   );
 };

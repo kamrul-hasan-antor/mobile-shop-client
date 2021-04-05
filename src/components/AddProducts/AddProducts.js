@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./AddProducts.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AddProducts = () => {
   const { register, handleSubmit } = useForm();
@@ -37,44 +39,46 @@ const AddProducts = () => {
       });
   };
   return (
-    <div className="mainForm">
-      <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-row w-75 ml-auto mr-auto">
-          <div className="col-md-5">
-            <input
-              className="form-control mt-3"
-              name="name"
-              placeholder="Enter Mobile Name"
-              ref={register}
-            />
+    <div>
+      <div className="mainForm">
+        <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-row w-75 ml-auto mr-auto">
+            <div className="col-md-5">
+              <input
+                className="form-control mt-3"
+                name="name"
+                placeholder="Enter Mobile Name"
+                ref={register}
+              />
+            </div>
+            <div className="col-md-5">
+              <input
+                className="form-control mt-3"
+                name="quantity"
+                placeholder="Enter Mobile Quantity"
+                ref={register}
+              />
+            </div>
+            <div className="col-md-5">
+              <input
+                className="form-control mt-3"
+                name="price"
+                placeholder="Enter Mobile Price"
+                ref={register}
+              />
+            </div>
+            <div className="col-md-5">
+              <input
+                className="mt-3 btn btn-light w-75"
+                name="exampleRequired"
+                type="file"
+                onChange={handleImageUpload}
+              />
+              <input className="btn btn-primary ml-1 mt-3" type="submit" />
+            </div>
           </div>
-          <div className="col-md-5">
-            <input
-              className="form-control mt-3"
-              name="quantity"
-              placeholder="Enter Mobile Quantity"
-              ref={register}
-            />
-          </div>
-          <div className="col-md-5">
-            <input
-              className="form-control mt-3"
-              name="price"
-              placeholder="Enter Mobile Price"
-              ref={register}
-            />
-          </div>
-          <div className="col-md-5">
-            <input
-              className="mt-3 btn btn-light w-75"
-              name="exampleRequired"
-              type="file"
-              onChange={handleImageUpload}
-            />
-            <input className="btn btn-primary ml-1 mt-3" type="submit" />
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
