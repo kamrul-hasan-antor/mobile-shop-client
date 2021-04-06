@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./AddProducts.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const AddProducts = () => {
   const { register, handleSubmit } = useForm();
@@ -15,14 +13,14 @@ const AddProducts = () => {
       quantity: data.quantity,
       price: data.price,
     };
-    const url = `http://localhost:5000/addProduct`;
+    const url = `https://morning-fjord-14708.herokuapp.com/addProduct`;
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(productData),
-    }).then((res) => console.log("sever received", res));
+    }).then((res) => console.log(res));
   };
   const handleImageUpload = (event) => {
     const imageData = new FormData();

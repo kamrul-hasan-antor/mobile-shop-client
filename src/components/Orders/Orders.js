@@ -13,7 +13,7 @@ const Orders = () => {
     setOrders(filterData);
   };
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://morning-fjord-14708.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => filterOrders(data));
   }, []);

@@ -6,13 +6,13 @@ import "./EditProduct.css";
 const EditProduct = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/products";
+    const url = "https://morning-fjord-14708.herokuapp.com/products";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
   const handleClick = (id) => {
-    const url = `http://localhost:5000/delete/${id}`;
+    const url = `https://morning-fjord-14708.herokuapp.com/delete/${id}`;
     fetch(url, {
       method: "DELETE",
     })

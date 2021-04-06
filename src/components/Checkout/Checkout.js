@@ -10,7 +10,7 @@ const Checkout = () => {
   const [loggedinUser, setLoggedinUser] = useContext(UserContext);
 
   useEffect(() => {
-    const url = `http://localhost:5000/checkout/${_id}`;
+    const url = `https://morning-fjord-14708.herokuapp.com/checkout/${_id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setDetail(data));
@@ -29,7 +29,7 @@ const Checkout = () => {
       ...loggedinUser,
       orderTime: new Date(),
     };
-    const url = `http://localhost:5000/addOrders`;
+    const url = `https://morning-fjord-14708.herokuapp.com/addOrders`;
 
     fetch(url, {
       method: "POST",

@@ -16,23 +16,23 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className=" ml-lg-auto ml-sm-1 mb-2 mb-lg-0">
-                <Link className="mr-auto   nav-link" to="/home">
-                  Home
+                <Link className="mr-auto nav-link" to="/home">
+                  <h6>Home</h6>
                 </Link>
-                <Link className="mr-auto  nav-link" to="/checkout">
-                  Check Out
+                <Link className="mr-auto nav-link" to="/checkout">
+                  <h6>Check Out</h6>
                 </Link>
-                <Link className="mr-auto  nav-link" to="/orders">
-                  Orders
+                <Link className="mr-auto nav-link" to="/orders">
+                  <h6>Orders</h6>
                 </Link>
-                <Link className="mr-auto  nav-link" to="/deals">
-                  Deals
+                <Link className="mr-auto nav-link" to="/deals">
+                  <h6>Deals</h6>
                 </Link>
-                <Link className="mr-auto  nav-link" to="/admin">
-                  Admin
+                <Link className="mr-auto nav-link" to="/admin">
+                  <h6>Admin</h6>
                 </Link>
                 <Link className="mr-auto nav-link" to="/login">
-                  Login
+                  <h6>Login</h6>
                 </Link>
               </Nav>
             </Navbar.Collapse>
